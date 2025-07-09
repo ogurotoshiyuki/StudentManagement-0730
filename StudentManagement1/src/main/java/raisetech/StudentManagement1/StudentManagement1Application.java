@@ -1,6 +1,7 @@
 package raisetech.StudentManagement1;
 
 import java.util.List;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
+@MapperScan("raisetech.StudentManagement1")
 public class StudentManagement1Application {
 
 		@Autowired																			//2025/07/09追加
