@@ -20,8 +20,14 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	//Apache Commons Lang
+	//Apache Commons Lang 便利機能、ユーティリティ
 	implementation 'org.apache.commons:commons-lang3:3.14.0'
+
+	//MySQLドライバ追加　2025/07/09
+	runtimeOnly'com.mysql:mysql-connector-j'
+
+	//MyBatis追加　2025/07/09
+	implementation'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
