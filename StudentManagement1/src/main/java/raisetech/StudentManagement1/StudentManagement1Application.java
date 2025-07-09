@@ -26,12 +26,12 @@ public class StudentManagement1Application {
 		SpringApplication.run(StudentManagement1Application.class, args);
 	}
 	// GET: 全てのデータを返す
-	@GetMapping("/student")
-			public String getStudentInfo(@RequestParam String name){	//2025/07/09追加
-			Student student= repository.searchByName(name);						//2025/07/09追加
-//	public List<Map<String, String>> getStudentInfo() {					//2025/07/09削除
-		return student.getName()+" " + student.getAge() + "歳";			//2025/07/09追加
-	}
+//	@GetMapping("/student")
+//			public String getStudentInfo(@RequestParam String name){	//2025/07/09追加 07/10削除
+//			Student student= repository.searchByName(name);						//2025/07/09追加 07/10削除
+////	public List<Map<String, String>> getStudentInfo() {					//2025/07/09削除 07/10削除
+//		return student.getName()+" " + student.getAge() + "歳";			//2025/07/09追加 07/10削除
+//	}																																							07/10削除
 	// POST: フォームデータを新しい Map にして List に追加
 	@PostMapping("/student")
 	public void registerStudent(String name,int age){
@@ -47,4 +47,8 @@ public class StudentManagement1Application {
 	public void deleteStudent(String name){											//2025/07/09追加
 		repository.deleteStudent(name);														//2025/07/09追加
 	};
-}
+	@GetMapping("/student")																			//2025/07/10追加
+	public List<Student> getAllStudents() {											//2025/07/10追加
+		return repository.findAllStudents();											//2025/07/10追加
+	}																														//2025/07/10追加
+	}
