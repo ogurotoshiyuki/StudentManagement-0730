@@ -41,7 +41,7 @@ public class StudentManagement1Application {
 	@DeleteMapping("/student")																	//2025/07/09追加
 	public void deleteStudent(String name){											//2025/07/09追加
 		repository.deleteStudent(name);														//2025/07/09追加
-	};
+	}
 	@GetMapping("/student")																			//2025/07/10追加
 	public List<Student> getAllStudents() {											//2025/07/10追加
 		return repository.findAllStudents();											//2025/07/10追加
