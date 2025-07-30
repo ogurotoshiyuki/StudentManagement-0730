@@ -1,5 +1,7 @@
 package raisetech.StudentManagement1.domain;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +13,7 @@ import raisetech.StudentManagement1.data.StudentsCourses;
 public class StudentDetail {
 
   private Student student;
-  private List<StudentsCourses> studentsCourses;
+  private List<StudentsCourses> studentsCoursesList = new ArrayList<>(
+      Arrays.asList(new StudentsCourses(), new StudentsCourses()));
 
 }

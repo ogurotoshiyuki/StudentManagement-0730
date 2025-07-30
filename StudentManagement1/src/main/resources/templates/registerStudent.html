@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>受講生新規登録</title>
+</head>
+<body>
+<h1>新規受講生の登録</h1>
+
+<form th:action="@{/registerStudent}" method="post" th:object="${studentDetail}">
+  <table>
+    <tr>
+      <th>名前</th>
+      <td><input type="text" th:field="*{student.name}" /></td>
+    </tr>
+    <tr>
+      <th>カナ名</th>
+      <td><input type="text" th:field="*{student.kanaName}" /></td>
+    </tr>
+    <tr>
+      <th>ニックネーム</th>
+      <td><input type="text" th:field="*{student.nickname}" /></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><input type="email" th:field="*{student.email}" /></td>
+    </tr>
+    <tr>
+      <th>地域</th>
+      <td><input type="text" th:field="*{student.area}" /></td>
+    </tr>
+    <tr>
+      <th>年齢</th>
+      <td><input type="number" th:field="*{student.age}" /></td>
+    </tr>
+    <tr>
+      <th>性別</th>
+      <td><input type="text" th:field="*{student.sex}" /></td>
+    </tr>
+    <tr>
+      <th>備考</th>
+      <td><textarea th:field="*{student.remark}"></textarea></td>
+    </tr>
+  </table>
+
+  <h2>受講コース</h2>
+  <table>
+    <tr th:each="course, iterStat : *{studentsCoursesList}">
+      <td>
+        コース名: <input type="text" th:field="*{studentsCoursesList[__${iterStat.index}__].courseName}" /><br/>
+        開始日: <input type="date" th:field="*{studentsCoursesList[__${iterStat.index}__].courseStartAt}" /><br/>
+        終了日: <input type="date" th:field="*{studentsCoursesList[__${iterStat.index}__].courseEndAt}" />
+      </td>
+    </tr>
+  </table>
+
+  <button type="submit">登録</button>
+</form>
+
+</body>
+</html>
