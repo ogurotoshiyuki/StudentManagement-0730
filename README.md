@@ -2,9 +2,7 @@
 
 リンクアカデミーオンライン教育
 
-Webアプリケーション詳細設計演習①
+Webアプリケーション詳細設計演習②
 
-    10_MyBatisを使ってCRUDのRead処理を実装       07/23
-    11_Read処理のServiceとController部分を実装   07/24
-    12_Read処理のConverter部分実装（課題用）      07/25
+14_Thymeleafを使ったReadの画面描画処理（課題）
 
